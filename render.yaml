@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: line-exercise-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: LINE_CHANNEL_ACCESS_TOKEN
+        sync: false
+      - key: LINE_CHANNEL_SECRET
+        sync: false
+      - key: AIRTABLE_API_KEY
+        sync: false
+      - key: AIRTABLE_BASE_ID
+        value: app8LIJdTuh4z1tDE
+      - key: AIRTABLE_TABLE_ID
+        value: tblY5ou0tLSZrgnV3
